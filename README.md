@@ -24,7 +24,7 @@ maxY:Number y最大值
 ```
 ### Html
 ```html
- <div v-dragmove="tap" >dragmove</div>
+ <div v-dragmove="dragmove" >dragmove</div>
 
 ```
 ### callback
