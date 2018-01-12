@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>vue-smart-drag-mover</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<style>
+
+
+    body, html {
+
+    }
+
+    #app {
+
+    }
+</style>
+<body>
+<div id="app">
+    <div v-dragmove="dragmove" class="btn">tap</div>
+    x:{{x}}<br/>y:{{y}}
+</div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="dist/vue-smart-drag-mover.js"></script>
+<script>
+    Vue.use(VueSmartDragMover, {remember:true,maxX:300,minX:0,maxY:200,minY:0});
+    new Vue({
+        el: '#app', data: {x:0,y:0},
+        mounted: function () {
+
+        },
+        methods: {
+            dragmove: function (x, y) {
+                this.x=x;this.y=y
+
+            }
+        },
+        components: {
+            VueSmartDragMover: VueSmartDragMover
+        }
+    })
+</script>
+</body>
+</html>
