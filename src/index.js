@@ -65,11 +65,11 @@ function touchstart(e, self) {
     tapObj.distanceY = 0
 
     tapObj.startE()
-    tapObj.moveE = bindEvent(self, move, function (e) {
+    tapObj.moveE = bindEvent(window, move, function (e) {
         touchmove(e, self);
     }, false);
 
-    tapObj.endE = bindEvent(self, end, function (e) {
+    tapObj.endE = bindEvent(window, end, function (e) {
         return touchend(e, self);
     }, false);
     self.handler(tapObj.x, tapObj.y)
